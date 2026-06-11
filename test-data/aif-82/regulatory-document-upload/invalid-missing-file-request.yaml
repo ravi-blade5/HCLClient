@@ -1,0 +1,13 @@
+traceability:
+  epic: AIF-79
+  story: AIF-82
+  requirements: [BR-001, NFR-006]
+scenario: missing_file
+request:
+  method: POST
+  path: /api/v1/regulatory-documents
+  headers:
+    X-Trace-Id: trace-aif82-missing-file-001
+expected:
+  httpStatus: 400
+  errorCode: PDF_FILE_REQUIRED

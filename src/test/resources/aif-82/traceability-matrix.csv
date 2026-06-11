@@ -1,0 +1,9 @@
+artifact,scenario,requirements,jira_epic,jira_story
+RegulatoryDocumentControllerIntegrationTest,valid_pdf_upload,"BR-001;BR-015;NFR-002;NFR-005;NFR-006;NFR-008;NFR-009",AIF-79,AIF-82
+RegulatoryDocumentControllerIntegrationTest,missing_file,"BR-001;NFR-006",AIF-79,AIF-82
+RegulatoryDocumentControllerIntegrationTest,empty_file,"BR-001;NFR-006",AIF-79,AIF-82
+RegulatoryDocumentControllerIntegrationTest,invalid_mime_type,"BR-001;NFR-005;NFR-006",AIF-79,AIF-82
+RegulatoryDocumentControllerIntegrationTest,invalid_pdf_signature,"BR-001;NFR-006",AIF-79,AIF-82
+RegulatoryDocumentControllerIntegrationTest,oversized_file,"BR-001;NFR-006",AIF-79,AIF-82
+RegulatoryDocumentControllerIntegrationTest,filename_sanitization,"BR-001;NFR-005;NFR-006",AIF-79,AIF-82
+RegulatoryDocumentControllerIntegrationTest,document_not_found,"BR-015;NFR-002;NFR-008",AIF-79,AIF-82

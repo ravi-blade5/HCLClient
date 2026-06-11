@@ -1,0 +1,10 @@
+traceability:
+  epic: AIF-79
+  story: AIF-82
+  requirements: [BR-015, NFR-002, NFR-006]
+scenario: duplicate_upload_same_content
+description: Two uploads with identical synthetic PDF bytes to validate duplicate content handling.
+expected:
+  upload_count: 2
+  checksum_equal: true
+  audit_events_created: true
