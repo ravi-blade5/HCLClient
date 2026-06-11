@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: compliance-mapping-service-config
+  labels:
+    app: compliance-mapping-service
+    jira-epic: AIF-79
+    jira-story: AIF-82
+data:
+  SERVER_PORT: "8080"
+  APP_SECURITY_ENABLED: "true"
+  APP_UPLOAD_MAX_FILE_SIZE: "25MB"
+  APP_UPLOAD_MAX_REQUEST_SIZE: "26MB"
+  APP_STORAGE_TYPE: "s3"
+  APP_STORAGE_S3_REGION: "us-east-1"
+  APP_STORAGE_S3_PREFIX: "regulatory-documents"

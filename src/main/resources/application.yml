@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: compliance-mapping-service
+  servlet:
+    multipart:
+      max-file-size: ${APP_UPLOAD_MAX_FILE_SIZE:25MB}
+      max-request-size: ${APP_UPLOAD_MAX_REQUEST_SIZE:26MB}
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:h2:mem:compliance;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1}
+    username: ${SPRING_DATASOURCE_USERNAME:sa}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER:org.h2.Driver}
+  flyway:
+    enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+app:
+  security:
+    enabled: ${APP_SECURITY_ENABLED:false}
+  upload:
+    max-file-size: ${APP_UPLOAD_MAX_FILE_SIZE:25MB}
+    allowed-content-types:
+      - application/pdf
+      - application/x-pdf
+  storage:
+    type: ${APP_STORAGE_TYPE:local}
+    local-root-location: ${APP_STORAGE_LOCAL_ROOT:/tmp/hclclient/regulatory-documents}
+    s3:
+      bucket: ${APP_STORAGE_S3_BUCKET:}
+      region: ${APP_STORAGE_S3_REGION:us-east-1}
+      prefix: ${APP_STORAGE_S3_PREFIX:regulatory-documents}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: never
+server:
+  port: ${SERVER_PORT:8080}
+logging:
+  pattern:
+    level: "%5p traceId=%X{traceId:-unknown}"

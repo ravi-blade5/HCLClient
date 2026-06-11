@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: compliance-mapping-service
+spec:
+  selector:
+    app: compliance-mapping-service
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
