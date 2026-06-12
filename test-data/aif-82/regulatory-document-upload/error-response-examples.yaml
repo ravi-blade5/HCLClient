@@ -1,0 +1,16 @@
+traceability:
+  epic: AIF-79
+  story: AIF-82
+  requirements: [BR-001, NFR-006, NFR-008]
+scenario: error_response_examples
+errors:
+  - httpStatus: 400
+    errorCode: PDF_FILE_REQUIRED
+  - httpStatus: 400
+    errorCode: PDF_FILE_EMPTY
+  - httpStatus: 415
+    errorCode: UNSUPPORTED_FILE_TYPE
+  - httpStatus: 415
+    errorCode: INVALID_PDF_SIGNATURE
+  - httpStatus: 413
+    errorCode: PDF_FILE_TOO_LARGE

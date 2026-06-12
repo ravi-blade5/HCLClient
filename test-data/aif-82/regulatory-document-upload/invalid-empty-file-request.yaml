@@ -1,0 +1,16 @@
+traceability:
+  epic: AIF-79
+  story: AIF-82
+  requirements: [BR-001, NFR-006]
+scenario: empty_file
+request:
+  method: POST
+  path: /api/v1/regulatory-documents
+  parts:
+    file:
+      filename: empty-regulation.pdf
+      contentType: application/pdf
+      binaryFixturePath: src/test/resources/fixtures/pdf/empty-file.pdf
+expected:
+  httpStatus: 400
+  errorCode: PDF_FILE_EMPTY

@@ -1,0 +1,24 @@
+traceability:
+  epic: AIF-79
+  story: AIF-82
+  requirements: [BR-001, BR-015, NFR-002, NFR-005, NFR-006, NFR-008, NFR-009]
+scenario: valid_pdf_upload
+description: Synthetic valid multipart upload request for regulatory PDF ingestion.
+request:
+  method: POST
+  path: /api/v1/regulatory-documents
+  headers:
+    X-Trace-Id: trace-aif82-valid-001
+    Content-Type: multipart/form-data
+  parts:
+    file:
+      filename: state-retail-minimum-inventory-rules.pdf
+      contentType: application/pdf
+      binaryFixturePath: src/test/resources/fixtures/pdf/valid-regulatory-sample.pdf
+    jurisdiction: State of Example
+    documentTitle: Retail Minimum Inventory Rules
+    effectiveDate: "2026-01-15"
+    sourceReference: "State publication reference 2026-01"
+expected:
+  httpStatus: 202
+  statusValue: READY_FOR_EXTRACTION

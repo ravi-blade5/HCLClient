@@ -1,0 +1,22 @@
+app:
+  security:
+    enabled: false
+  upload:
+    max-file-size: 10KB
+  storage:
+    type: local
+    local-root-location: ${java.io.tmpdir}/hclclient-test-regulatory-documents
+spring:
+  datasource:
+    url: jdbc:h2:mem:compliance-test;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+logging:
+  level:
+    root: INFO

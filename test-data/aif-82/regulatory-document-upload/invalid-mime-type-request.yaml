@@ -1,0 +1,16 @@
+traceability:
+  epic: AIF-79
+  story: AIF-82
+  requirements: [BR-001, NFR-005, NFR-006]
+scenario: invalid_mime_type
+request:
+  method: POST
+  path: /api/v1/regulatory-documents
+  parts:
+    file:
+      filename: regulatory-rules.pdf
+      contentType: text/plain
+      binaryFixturePath: src/test/resources/fixtures/pdf/valid-regulatory-sample.pdf
+expected:
+  httpStatus: 415
+  errorCode: UNSUPPORTED_FILE_TYPE

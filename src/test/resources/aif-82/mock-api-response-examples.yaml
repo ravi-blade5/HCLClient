@@ -1,0 +1,17 @@
+success:
+  status: 202
+  body:
+    documentId: 2bb6f2f0-6df3-4cdd-8c3a-7bcd78c7b101
+    status: READY_FOR_EXTRACTION
+    traceId: trace-aif82-valid-001
+failures:
+  - status: 400
+    errorCode: PDF_FILE_REQUIRED
+  - status: 400
+    errorCode: PDF_FILE_EMPTY
+  - status: 415
+    errorCode: UNSUPPORTED_FILE_TYPE
+  - status: 415
+    errorCode: INVALID_PDF_SIGNATURE
+  - status: 413
+    errorCode: PDF_FILE_TOO_LARGE

@@ -1,0 +1,6 @@
+scenario,http_status,error_code,trace_id,description
+missing_file,400,PDF_FILE_REQUIRED,trace-aif82-missing-file-001,Multipart request missing file part
+empty_file,400,PDF_FILE_EMPTY,trace-aif82-empty-file-001,Zero-byte upload
+invalid_mime_type,415,UNSUPPORTED_FILE_TYPE,trace-aif82-invalid-mime-001,Wrong MIME type with PDF filename
+invalid_signature,415,INVALID_PDF_SIGNATURE,trace-aif82-invalid-signature-001,Non-PDF bytes in PDF upload
+oversized,413,PDF_FILE_TOO_LARGE,trace-aif82-oversized-001,File exceeds configured limit

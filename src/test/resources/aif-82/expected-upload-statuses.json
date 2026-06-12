@@ -1,0 +1,8 @@
+[
+  {"scenario":"valid_pdf_upload","expectedStatus":"READY_FOR_EXTRACTION","expectedHttpStatus":202},
+  {"scenario":"missing_file","expectedErrorCode":"PDF_FILE_REQUIRED","expectedHttpStatus":400},
+  {"scenario":"empty_file","expectedErrorCode":"PDF_FILE_EMPTY","expectedHttpStatus":400},
+  {"scenario":"invalid_mime_type","expectedErrorCode":"UNSUPPORTED_FILE_TYPE","expectedHttpStatus":415},
+  {"scenario":"invalid_pdf_signature","expectedErrorCode":"INVALID_PDF_SIGNATURE","expectedHttpStatus":415},
+  {"scenario":"oversized_file","expectedErrorCode":"PDF_FILE_TOO_LARGE","expectedHttpStatus":413}
+]

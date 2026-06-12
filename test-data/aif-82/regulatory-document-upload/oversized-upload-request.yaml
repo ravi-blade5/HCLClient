@@ -1,0 +1,16 @@
+traceability:
+  epic: AIF-79
+  story: AIF-82
+  requirements: [BR-001, NFR-006]
+scenario: oversized_file
+request:
+  method: POST
+  path: /api/v1/regulatory-documents
+  parts:
+    file:
+      filename: oversized-regulation.pdf
+      contentType: application/pdf
+      binaryFixturePath: src/test/resources/fixtures/pdf/oversized-regulatory-sample.pdf
+expected:
+  httpStatus: 413
+  errorCode: PDF_FILE_TOO_LARGE
